@@ -8,6 +8,7 @@ variable "bucket_name"{
     description = "The name of the S3 bucket"
     type        = string
     default     = "stahls-terraform-bucket"
+    dynamodb_table = "stahls-terraform-lock"
 }
 
 variable "instance_type" {
