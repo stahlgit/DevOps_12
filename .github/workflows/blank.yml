@@ -34,5 +34,3 @@ jobs:
       id: set_output
       run: echo "ami_id=$(terraform output -raw ami_id)" >> $GITHUB_ENV
   
-    - name: Use output
-      run: echo "AMI ID is ${{ env.ami_id }}"
