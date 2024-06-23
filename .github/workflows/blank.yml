@@ -29,3 +29,10 @@ jobs:
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+    - name: Set output
+      id: set_output
+      run: echo "ami_id=$(terraform output -raw ami_id)" >> $GITHUB_ENV
+  
+    - name: Use output
+      run: echo "AMI ID is ${{ env.ami_id }}"
